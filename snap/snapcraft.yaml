@@ -1,0 +1,26 @@
+name: progress # check to see if it's available
+version: git
+summary: Easy progress reporting for Python # 79 char long summary
+description: |
+  Easy progress reporting for Python
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs
+
+apps:
+  progress:
+    command: progress
+    plugs:
+      - home
+     
+parts: 
+  progress:
+    source: https://github.com/verigak/progress
+    source-type: git
+    plugin: python
+    python-version: python3
+    
+    build-packages:
+      - python3
+      
+    stage-packages:
+      - python3
